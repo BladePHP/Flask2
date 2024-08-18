@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+Task Manager
+{% endblock %}
+
+{% block body %}
+
+<div class="align-item-center justify-content-between d-flex mb-3">
+    <h3 align="center"> Buat Akun </h3>
+</div>
+<form action="{{ url_for('signup') }}" method="post">
+    <div class="mb-3 row">
+        <label for="email">Email : </label>
+        <input type="text" name="email" placeholder="email" class="form-control" required>
+    </div>
+    <div class="mb-3 row">
+        <label for="username">Username : </label>
+        <input type="text" name="username" placeholder="username" class="form-control" required>
+    </div>
+    <div class="mb-3 row">
+        <label for="password1">Password : </label>
+        <input type="password" name="password1" placeholder="password" class="form-control" required>
+    </div>
+    <div class="mb-3 row">
+        <label for="password2">Confirm Password : </label>
+        <input type="password" name="password2" placeholder="password2" class="form-control" required>
+    </div>
+    <div class="mb-3 d-flex btn btn-group">
+        <button class="btn btn-primary" type="submit">Tambah</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Kembali</a>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+Task Manager
+{% endblock %}
+
+{% block body %}
+
+<div class="align-item-center justify-content-between d-flex mb-3">
+    <h3> List Tugas </h3>
+    <a href="{{ url_for('create') }}" class="btn btn-primary">Tambah Tugas</a>
+</div>
+<table class="table table-hover">
+    <thead class="table table-primary">
+        <tr>
+            <th class="align-center">ID</th>
+            <th class="align-center">Judul</th>
+            <th class="align-center">Deskripsi</th>
+            <th class="align-center">Tanggal Dibuat</th>
+            <th class="align-center">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    {% for tugas in tugas %}
+
+        <tr>
+            <td class="align-center">{{tugas.id}}</td>
+            <td class="align-center">{{tugas.Judul}}</td>
+            <td class="align-center">{{tugas.Deskripsi}}</td>
+            <td class="align-center">{{tugas.Created_at}}</td>
+            <td class="align-center btn btn-group">
+                <a href="" class="btn btn-secondary">Edit</a>
+                <a href="/delete/{{tugas.id}}" class="btn btn-danger" onclick="return confirm('Yakin?')">Delete</a>
+            </td>
+        </tr>
+    
+    {% endfor %}
+
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

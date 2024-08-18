@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Task Manager
+{% endblock %}
+
+{% block body %}
+
+<div class="align-item-center justify-content-between d-flex mb-3">
+    <h3 align="center"> Halaman Login </h3>
+</div>
+<form method="POST">
+    <div class="mb-3 row">
+        <label for="email">Email : </label>
+        <input type="text" name="email" placeholder="email" class="form-control" required>
+    </div>
+    <div class="mb-3 row">
+        <label for="password">Password : </label>
+        <input type="password" name="password" placeholder="password" class="form-control" required>
+    </div>
+    <div class="mb-3 d-flex btn btn-group">
+        <button class="btn btn-primary" type="submit">Login</button>
+    </div>
+</form>
+{% endblock %}
