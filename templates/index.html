@@ -30,7 +30,7 @@ Task Manager
             <td class="align-center">{{tugas.Deskripsi}}</td>
             <td class="align-center">{{tugas.Created_at}}</td>
             <td class="align-center btn btn-group">
-                <a href="" class="btn btn-secondary">Edit</a>
+                <a href="/edit/{{tugas.id}}" class="btn btn-secondary">Edit</a>
                 <a href="/delete/{{tugas.id}}" class="btn btn-danger" onclick="return confirm('Yakin?')">Delete</a>
             </td>
         </tr>

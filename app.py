@@ -60,6 +60,21 @@ def create():
 
     else:
         return render_template("create.html", user=current_user)
+    
+@app.route('/update/<int:id>', methods = ['GET', 'POST'])
+def edit(id):
+    tugas = Task.query.get(id)
+    
+    if request.method == 'POST':
+
+        tugas.Judul = request.form.get("Judul")
+        tugas.Deskripsi = request.form.get("Deskripsi")
+        db.session.commit()
+        flash('Tugas Berhasil Diubah')
+        
+        return redirect(url_for('index'), tugas=tugas)
+    else:
+        return render_template("create.html")
 
 @app.route('/delete/<int:id>', methods = ['GET', 'POST'])
 def delete(id):

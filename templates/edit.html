@@ -7,16 +7,16 @@ Task Manager
 {% block body %}
 
 <div class="align-item-center justify-content-between d-flex mb-3">
-    <h3 align="center"> Update Tugas </h3>
+    <h3 align="center"> Ubah Tugas </h3>
 </div>
-<form action="{{ url_for('update') }}" method="post">
+<form action="{{ url_for('edit') }}" method="post">
     <div class="mb-3 row">
         <label for="Judul">Judul Tugas : </label>
-        <input type="text" name="Judul" placeholder="Judul" class="form-control" required>
+        <input type="text" name="Judul" placeholder="Judul" class="form-control" value="{{tugas.Judul}}">
     </div>
     <div class="mb-3 row">
         <label for="Deskripsi">Deskripsi Tugas : </label>
-        <textarea class="form-control" name="Deskripsi" placeholder="Deskripsi" rows="10" cols="10" required></textarea>
+        <textarea class="form-control" name="Deskripsi" placeholder="Deskripsi" rows="10" cols="10">{{tugas.Deskripsi}}</textarea>
     </div>
     <div class="mb-3 d-flex btn btn-group">
         <button class="btn btn-primary" type="submit">Tambah</button>
